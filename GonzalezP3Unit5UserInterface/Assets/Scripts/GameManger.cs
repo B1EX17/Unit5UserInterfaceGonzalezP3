@@ -2,19 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using JetBrains.Annotations;
 
 public class GameManger : MonoBehaviour
 {
     public List<GameObject> targets;
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI gameOverText;
+    public bool isGameActive;
     private int score;
     private float spawnRate = 1.0f;
     // Start is called before the first frame update
     void Start()
     {
+        isGameActive = true;
         StartCoroutine(SpawnTarget());
         score = 0;
         UpdateScore(0);
+       
     }
 
     // Update is called once per frame
@@ -25,7 +30,7 @@ public class GameManger : MonoBehaviour
     IEnumerator SpawnTarget()
     {
 
-        while (true)
+        while (isGameActive)
         {
             yield return new WaitForSeconds(spawnRate);
             int index = Random.Range(0, targets.Count);
@@ -34,8 +39,14 @@ public class GameManger : MonoBehaviour
         }
 
     }
-
-   public void UpdateScore(int scoreToAdd)
+  
+    public void GameOver()
+    {
+        gameOverText.gameObject.SetActive(true);
+        isGameActive = false;
+    }
+   
+    public void UpdateScore(int scoreToAdd)
     {
         score += scoreToAdd;
         scoreText.text = "Score:" + score;
