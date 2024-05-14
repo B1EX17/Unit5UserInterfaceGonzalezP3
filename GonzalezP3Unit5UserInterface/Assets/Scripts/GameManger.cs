@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using JetBrains.Annotations;
-
+using UnityEngine.SceneManagement;
 public class GameManger : MonoBehaviour
 {
     public List<GameObject> targets;
@@ -50,5 +50,10 @@ public class GameManger : MonoBehaviour
     {
         score += scoreToAdd;
         scoreText.text = "Score:" + score;
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
