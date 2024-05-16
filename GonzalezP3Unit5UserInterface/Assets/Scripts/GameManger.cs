@@ -4,11 +4,13 @@ using UnityEngine;
 using TMPro;
 using JetBrains.Annotations;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class GameManger : MonoBehaviour
 {
     public List<GameObject> targets;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
+    public Button restartButton;
     public bool isGameActive;
     private int score;
     private float spawnRate = 1.0f;
@@ -54,6 +56,7 @@ public class GameManger : MonoBehaviour
 
     public void RestartGame()
     {
+        restartButton.gameObject.SetActive(true);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

@@ -159,7 +159,8 @@ MonoBehaviour:
   - {fileID: 7641554113393070344, guid: bb412a93858c415408ddac1137f7bdc7, type: 3}
   scoreText: {fileID: 1487738888}
   gameOverText: {fileID: 1393268951}
-  isGameActive: 0
+  restartButton: {fileID: 942525433}
+  isGameActive: 1
 --- !u!4 &112688877
 Transform:
   m_ObjectHideFlags: 0
@@ -611,12 +612,12 @@ GameObject:
   - component: {fileID: 942525434}
   - component: {fileID: 942525433}
   m_Layer: 5
-  m_Name: ' Button'
+  m_Name: ' Retsart Button'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &942525432
 RectTransform:
   m_ObjectHideFlags: 0
