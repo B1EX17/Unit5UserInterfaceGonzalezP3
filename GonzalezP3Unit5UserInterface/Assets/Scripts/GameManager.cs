@@ -5,7 +5,7 @@ using TMPro;
 using JetBrains.Annotations;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-public class GameManger : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     public List<GameObject> targets;
     public TextMeshProUGUI scoreText;
@@ -44,6 +44,7 @@ public class GameManger : MonoBehaviour
   
     public void GameOver()
     {
+        restartButton.gameObject.SetActive(true);
         gameOverText.gameObject.SetActive(true);
         isGameActive = false;
     }
@@ -56,7 +57,7 @@ public class GameManger : MonoBehaviour
 
     public void RestartGame()
     {
-        restartButton.gameObject.SetActive(true);
+       
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
